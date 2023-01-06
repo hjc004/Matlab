@@ -1,0 +1,10 @@
+I = imread('pout.tif');
+a = fspecial('average',[3,3]);
+b = [0,-1,0;-1,5,-1;0,-1,0];
+c = [0,-1,0;-1,4,-1;0,-1,0];
+d = fspecial('average',[5,5]);
+figure;
+subplot(2,2,1),freqz2(a),title('3x3');
+subplot(2,2,2),freqz2(b),title('5x5');
+subplot(2,2,3),freqz2(c),title('拉普拉斯');
+subplot(2,2,4),freqz2(d),title('中值');

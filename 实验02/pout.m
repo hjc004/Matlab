@@ -1,0 +1,12 @@
+clear;
+close all;
+clc;
+a = imread('pout.tif');
+J = imread('test04.jpg');
+I2 = im2double(I);
+I3 = imsubtract(I,J);
+I4 = imadd(I,J);
+figure;
+subplot(1,3,1);imshow(I2);
+subplot(1,3,2);imshow(I3);
+subplot(1,3,3);imshow(I4);

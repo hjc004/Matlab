@@ -1,0 +1,12 @@
+clear;
+close all;
+clc;
+I = imread('text.png');
+T = imcrop(I,[145 30 6 20]);
+T1 = real(ifft2(fft2(I).*rot90(fft2(T,256,256),2)));
+T2 = max(T1(:));
+thresh = T2*0.9;
+figure,subplot(2,2,1),imshow(I);
+       subplot(2,2,2),imshow(T);
+       subplot(2,2,3),imshow(T1,[]);
+       subplot(2,2,4),imshow(T1>thresh);

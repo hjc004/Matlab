@@ -1,0 +1,16 @@
+I = imread('pout.tif');
+A = fspecial('average',[3,3]);
+B = [0,-1,0;-1,5,-1;0,-1,0];
+C = [0,-1,0;-1,4,-1;0,-1,0];
+a = conv2(I,A);
+b = conv2(I,B);
+c = conv2(I,C);
+figure;
+subplot(1,2,1),imshow(I),title('原图');
+subplot(1,2,2),imshow(a),title('模板a');
+figure;
+subplot(1,2,1),imshow(I),title('原图');
+subplot(1,2,2),imshow(b),title('模板b');
+figure;
+subplot(1,2,1),imshow(I),title('原图');
+subplot(1,2,2),imshow(c),title('模板c');
